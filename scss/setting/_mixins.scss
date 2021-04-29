@@ -1,0 +1,21 @@
+@mixin absCenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint){
+  @if $breakpoint == spBig{
+     @media only screen and (min-width: 400px){ @content };
+  }
+  @if $breakpoint == tab-port{
+    @media only screen and (min-width: 768px){ @content };
+  }
+  @if $breakpoint == laptop{
+    @media only screen and (min-width: 992px){ @content };
+  }
+  @if $breakpoint == desktop{
+    @media only screen and (min-width: 1200px){ @content };
+  }
+}

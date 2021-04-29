@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* --- CSS start ---*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    position: relative;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    line-height: 1;
+}
+
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+div,
+address,
+iframe,
+canvas,
+hr,
+textarea {
+    display: block;
+}
+
+textarea {
+    resize: vertical;
+    overflow: hidden;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+}
+
+input,
+button,
+select {
+    vertical-align: middle;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 0;
+    background: none;
+    margin: 0;
+    padding: 0;
+    box-shadow : none;
+    cursor: pointer;
+    white-space:normal;
+    outline: 0;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+}
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select
+{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: .01px;
+    text-overflow: "";
+}
+    select::-ms-expand {
+  display: none;
+}
+table {
+    border-collapse: collapse;
+}
+//font-setting
