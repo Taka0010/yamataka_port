@@ -105,10 +105,14 @@ table {
 .fstSeg {
   background-color: #ffff9d;
   color: #222222; }
+  .fstSeg a {
+    color: #222222; }
 
 .secSeg {
   background-color: #222222;
   color: #ffff9d; }
+  .secSeg a {
+    color: #ffff9d; }
 
 body {
   font-family: aktiv-grotesk-extended, dnp-shuei-gothic-kin-std, sans-serif; }
