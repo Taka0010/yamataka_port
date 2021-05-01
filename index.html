@@ -14,6 +14,40 @@
       rel="stylesheet"
     />
     <!--△CSS△-->
+
+    <!--▽FONT▽-->
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "fbx4txo",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+    <!--△FONT△-->
   </head>
   <body>
     <section class="fstSeg">
@@ -38,7 +72,7 @@
           </picture>
         </div>
         <div class="fv__ttl">
-          <h1 class="fv__ttl--name">TAKUYA<br />NAKANO</h1>
+          <h1 class="fv__ttl--name optima">TAKUYA<br />NAKANO</h1>
           <p class="fv__ttl--desc">I am a FREELANCE WEB DESIGNER</p>
         </div>
       </section>
@@ -47,7 +81,7 @@
       <!--▽ About ▽-->
       <section class="about">
         <h2 class="about__ttl">個性を引き出し<br />最大化させる</h2>
-        <h3 class="about__en">ABOUT<br />US</h3>
+        <h3 class="about__en optima">ABOUT<br />US</h3>
         <div class="about__txt">
           <p class="about__txt--fst">
             デザインといえば、あるモノを実物以上にカッコよく見せたり、デザインする事で原形がなくなるような。まるで特殊メイクみたいな印象を持たれてる人が多いと思います。
@@ -74,7 +108,7 @@
 
       <!--▽ GetInTouch ▽-->
       <section class="getInTouch">
-        <p class="getInTouch__en">GET IN TOUCH</p>
+        <p class="getInTouch__en optima">GET IN TOUCH</p>
         <p class="getInTouch__jp">あなたの個性を聞かせてください</p>
       </section>
       <!--△ GetInTouch △-->
