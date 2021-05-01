@@ -2,10 +2,16 @@
 .fstSeg {
   background-color: $color-main;
   color: $color-sub;
+  a {
+    color: $color-sub;
+  }
 }
 .secSeg {
   background-color: $color-sub;
   color: $color-main;
+  a {
+    color: $color-main;
+  }
 }
 //テキスト共通設定。
 body {
