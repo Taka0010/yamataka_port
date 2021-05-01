@@ -1,9 +1,17 @@
 //レイアウト or ブロックの共通設定
+.fstSeg {
+  background-color: $color-main;
+  color: $color-sub;
+}
+.secSeg {
+  background-color: $color-sub;
+  color: $color-main;
+}
+//テキスト共通設定。
+body {
+  font-family: aktiv-grotesk-extended, dnp-shuei-gothic-kin-std, sans-serif;
+}
 
-
-
-
-//テキスト共通設定
-
-
-
+.optima {
+  font-family: Optima, sans-serif;
+}
