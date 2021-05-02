@@ -1,0 +1,32 @@
+.learnMore {
+  position: relative;
+  padding-right: 2.5rem;
+  font-size: calc(15 / 414 * 100vw);
+  &:before,
+  &:after {
+    display: block;
+    content: "";
+    background-color: $color-sub;
+    border-radius: 10px;
+    position: absolute;
+    width: 13px;
+    height: 1px;
+    top: 7px;
+    right: 1px;
+  }
+  &:before {
+    width: 1px;
+    height: 13px;
+    top: 1px;
+    right: 7px;
+  }
+}
+
+.secSeg {
+  .learnMore {
+    &:before,
+    &:after {
+      background-color: $color-main;
+    }
+  }
+}
