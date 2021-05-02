@@ -1,0 +1,44 @@
+.fstSeg {
+  position: relative;
+  &__sideTxt {
+    position: absolute;
+    display: inline-block;
+    font-size: 8px;
+    top: 400px;
+  }
+  .left {
+    left: 3%;
+    transform-origin: left center;
+    transform: rotate(-90deg);
+  }
+  .right {
+    right: 3%;
+    transform-origin: right center;
+    transform: rotate(90deg);
+  }
+}
+
+.fv {
+  &__img {
+    width: calc(320 / 414 * 100vw);
+    margin: 0 auto;
+  }
+  &__ttl {
+    position: relative;
+    top: -24rem;
+    width: 90%;
+    margin: 0 auto;
+    &--name {
+      font-size: calc(70 / 414 * 100vw);
+      line-height: 1.16;
+      letter-spacing: 12px;
+      font-weight: 100;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+    &--desc {
+      font-size: calc(12 / 414 * 100vw);
+      text-align: center;
+    }
+  }
+}

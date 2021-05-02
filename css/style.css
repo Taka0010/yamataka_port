@@ -103,12 +103,14 @@ table {
   border-collapse: collapse; }
 
 .fstSeg {
+  padding: 6.5rem 0 10rem;
   background-color: #ffff9d;
   color: #222222; }
   .fstSeg a {
     color: #222222; }
 
 .secSeg {
+  padding: 10rem 0;
   background-color: #222222;
   color: #ffff9d; }
   .secSeg a {
@@ -122,3 +124,39 @@ body {
 
 .header {
   color: red; }
+
+.fstSeg {
+  position: relative; }
+  .fstSeg__sideTxt {
+    position: absolute;
+    display: inline-block;
+    font-size: 8px;
+    top: 400px; }
+  .fstSeg .left {
+    left: 3%;
+    transform-origin: left center;
+    transform: rotate(-90deg); }
+  .fstSeg .right {
+    right: 3%;
+    transform-origin: right center;
+    transform: rotate(90deg); }
+
+.fv__img {
+  width: calc(320 / 414 * 100vw);
+  margin: 0 auto; }
+
+.fv__ttl {
+  position: relative;
+  top: -24rem;
+  width: 90%;
+  margin: 0 auto; }
+  .fv__ttl--name {
+    font-size: calc(70 / 414 * 100vw);
+    line-height: 1.16;
+    letter-spacing: 12px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 7px; }
+  .fv__ttl--desc {
+    font-size: calc(12 / 414 * 100vw);
+    text-align: center; }

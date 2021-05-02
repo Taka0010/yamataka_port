@@ -1,5 +1,6 @@
 //レイアウト or ブロックの共通設定
 .fstSeg {
+  padding: 6.5rem 0 10rem;
   background-color: $color-main;
   color: $color-sub;
   a {
@@ -7,6 +8,7 @@
   }
 }
 .secSeg {
+  padding: 10rem 0;
   background-color: $color-sub;
   color: $color-main;
   a {
