@@ -8,7 +8,7 @@
   }
 }
 .secSeg {
-  padding: 10rem 0;
+  padding: 15rem 0 10rem;
   background-color: $color-sub;
   color: $color-main;
   a {
@@ -23,4 +23,10 @@ body {
 .optima {
   font-family: Optima, sans-serif;
   font-weight: 100;
+}
+.fsz-1 {
+  font-size: 1.5rem;
+}
+.fsz-2 {
+  font-size: 1.4rem;
 }

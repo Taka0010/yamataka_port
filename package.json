@@ -2,7 +2,6 @@
   "name": "taka-dev",
   "version": "1.0.0",
   "description": "webpage",
-  "main": "script.js",
   "scripts": {
     "watch:sass": "node-sass scss/style.scss css/style.css -w",
     "devserver": "live-server",
@@ -18,7 +17,8 @@
   "license": "taka-dev-env",
   "dependencies": {
     "core-js": "^3.9.0",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "swiper": "^6.5.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",

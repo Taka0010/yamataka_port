@@ -1,3 +1,4 @@
+// The First Half
 .fstSeg {
   position: relative;
   &__sideTxt {
@@ -46,7 +47,7 @@
 
 .about {
   position: relative;
-  padding: 0 calc(20 / 414 * 100vw);
+  @include padSpacing;
   &__ttl {
     display: inline-block;
     font-size: calc(35 / 414 * 100vw);
@@ -78,5 +79,88 @@
   }
   &__link {
     text-align: right;
+  }
+}
+
+// The Second Half
+.works {
+  margin-bottom: 15rem;
+  &__slider {
+    width: calc(394 / 414 * 100vw);
+    margin-left: auto;
+  }
+  &__txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include padSpacing;
+    margin-bottom: 2rem;
+  }
+}
+
+.getInTouch {
+  margin-bottom: 15rem;
+  &__en {
+    font-size: calc(50 / 414 * 100vw);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+  }
+  &__jp {
+    font-size: calc(15 / 414 * 100vw);
+    text-align: center;
+    color: #fff;
+  }
+}
+
+.instagram {
+  @include padSpacing;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  @include padSpacing;
+  .pageLinks {
+    width: calc(280 / 414 * 100vw);
+    margin: 0 auto 1rem 0;
+    &__lists {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__list {
+      margin-bottom: 2rem;
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 0.1rem;
+        transform: rotateZ(25deg);
+        background-color: $color-main;
+      }
+      &:nth-of-type(1) a,
+      &:nth-of-type(4) a {
+        padding-left: 0;
+      }
+      &--link {
+        padding: 0 2rem;
+      }
+    }
+  }
+  .sns {
+    width: calc(181 / 414 * 100vw);
+    margin-left: auto;
+    &__list {
+      margin-bottom: 1.7rem;
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 4rem;
+        height: 0.1rem;
+        margin-right: 0.5rem;
+        background-color: #fff;
+      }
+    }
   }
 }
