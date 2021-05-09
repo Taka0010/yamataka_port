@@ -115,7 +115,10 @@
 
 .instagram {
   @include padSpacing;
-  margin-bottom: 2rem;
+  margin-bottom: 10rem;
+  &__ttl {
+    margin-bottom: 2rem;
+  }
 }
 
 .footer {
@@ -129,7 +132,7 @@
     }
     &__list {
       margin-bottom: 2rem;
-      &::after {
+      &:not(:last-of-type)::after {
         content: "";
         display: inline-block;
         height: 100%;
@@ -143,6 +146,7 @@
       }
       &--link {
         padding: 0 2rem;
+        letter-spacing: 0.14em;
       }
     }
   }
@@ -153,6 +157,7 @@
       margin-bottom: 1.7rem;
       display: flex;
       align-items: center;
+      letter-spacing: 0.15em;
       &::before {
         content: "";
         display: inline-block;
