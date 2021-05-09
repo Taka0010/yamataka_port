@@ -104,8 +104,7 @@ table {
 
 .learnMore {
   position: relative;
-  padding-right: 2.5rem;
-  font-size: calc(15 / 414 * 100vw); }
+  padding-right: 2.5rem; }
   .learnMore:before, .learnMore:after {
     display: block;
     content: "";
@@ -124,6 +123,16 @@ table {
 
 .secSeg .learnMore:before, .secSeg .learnMore:after {
   background-color: #ffff9d; }
+
+.workSlider .swiper-scrollbar {
+  opacity: 1 !important;
+  height: 1px !important;
+  background: #fff !important; }
+  .workSlider .swiper-scrollbar-drag {
+    height: 10px;
+    background: #ffff9d;
+    border-radius: 10px;
+    top: -5px; }
 
 .fstSeg {
   padding: 6.5rem 0 10rem;
@@ -145,6 +154,12 @@ body {
 .optima {
   font-family: Optima, sans-serif;
   font-weight: 100; }
+
+.fsz-1 {
+  font-size: 1.5rem; }
+
+.fsz-2 {
+  font-size: 1.4rem; }
 
 .header {
   color: red; }
@@ -218,3 +233,68 @@ body {
     margin-bottom: 4rem; }
   .about__link {
     text-align: right; }
+
+.works {
+  margin-bottom: 15rem; }
+  .works__slider {
+    width: calc(394 / 414 * 100vw);
+    margin-left: auto; }
+  .works__txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc(20 / 414 * 100vw);
+    margin-bottom: 2rem; }
+
+.getInTouch {
+  margin-bottom: 15rem; }
+  .getInTouch__en {
+    font-size: calc(50 / 414 * 100vw);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: underline; }
+  .getInTouch__jp {
+    font-size: calc(15 / 414 * 100vw);
+    text-align: center;
+    color: #fff; }
+
+.instagram {
+  padding: 0 calc(20 / 414 * 100vw);
+  margin-bottom: 2rem; }
+
+.footer {
+  padding: 0 calc(20 / 414 * 100vw); }
+  .footer .pageLinks {
+    width: calc(280 / 414 * 100vw);
+    margin: 0 auto 1rem 0; }
+    .footer .pageLinks__lists {
+      display: flex;
+      flex-wrap: wrap; }
+    .footer .pageLinks__list {
+      margin-bottom: 2rem; }
+      .footer .pageLinks__list::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 0.1rem;
+        transform: rotateZ(25deg);
+        background-color: #ffff9d; }
+      .footer .pageLinks__list:nth-of-type(1) a,
+      .footer .pageLinks__list:nth-of-type(4) a {
+        padding-left: 0; }
+      .footer .pageLinks__list--link {
+        padding: 0 2rem; }
+  .footer .sns {
+    width: calc(181 / 414 * 100vw);
+    margin-left: auto; }
+    .footer .sns__list {
+      margin-bottom: 1.7rem;
+      display: flex;
+      align-items: center; }
+      .footer .sns__list::before {
+        content: "";
+        display: inline-block;
+        width: 4rem;
+        height: 0.1rem;
+        margin-right: 0.5rem;
+        background-color: #fff; }

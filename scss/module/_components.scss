@@ -1,7 +1,6 @@
 .learnMore {
   position: relative;
   padding-right: 2.5rem;
-  font-size: calc(15 / 414 * 100vw);
   &:before,
   &:after {
     display: block;
@@ -27,6 +26,20 @@
     &:before,
     &:after {
       background-color: $color-main;
+    }
+  }
+}
+
+.workSlider {
+  .swiper-scrollbar {
+    opacity: 1 !important;
+    height: 1px !important;
+    background: #fff !important;
+    &-drag {
+      height: 10px;
+      background: $color-main;
+      border-radius: 10px;
+      top: -5px;
     }
   }
 }
