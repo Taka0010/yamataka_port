@@ -25,25 +25,25 @@
     <script>
       (function (d) {
         var config = {
-            kitId: "fbx4txo",
+            kitId: 'fbx4txo',
             scriptTimeout: 3000,
             async: true,
           },
           h = d.documentElement,
           t = setTimeout(function () {
             h.className =
-              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+              h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
           }, config.scriptTimeout),
-          tk = d.createElement("script"),
+          tk = d.createElement('script'),
           f = false,
-          s = d.getElementsByTagName("script")[0],
+          s = d.getElementsByTagName('script')[0],
           a;
-        h.className += " wf-loading";
-        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        h.className += ' wf-loading';
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
         tk.async = true;
         tk.onload = tk.onreadystatechange = function () {
           a = this.readyState;
-          if (f || (a && a != "complete" && a != "loaded")) return;
+          if (f || (a && a != 'complete' && a != 'loaded')) return;
           f = true;
           clearTimeout(t);
           try {
@@ -56,124 +56,180 @@
     <!--△FONT△-->
   </head>
   <body>
-    <section class="fstSeg">
-      <!--▽ Header ▽-->
-      <header class="header"></header>
-      <!--△ Header △-->
-
-      <!--▽ Commontext ▽-->
-      <p class="fstSeg__sideTxt left">&copy;TAKUYA NAKANO 2021</p>
-      <p class="fstSeg__sideTxt right">&copy;TAKUYA NAKANO 2021</p>
-      <!--△ Commontext △-->
-
-      <!--▽ Main ▽-->
-      <section class="fv">
-        <div class="fv__img">
-          <picture>
-            <source
-              srcset="./img/top/portrait-sp.jpg"
-              media="(max-width: 768px)"
-            />
-            <img srcset="./img/top/portrait-pc.jpg" alt="" />
-          </picture>
-        </div>
-        <div class="fv__ttl">
-          <h1 class="fv__ttl--name optima">TAKUYA<br />NAKANO</h1>
-          <p class="fv__ttl--desc">I am a FREELANCE WEB DESIGNER</p>
-        </div>
-      </section>
-      <!--△ Main △-->
-
-      <!--▽ About ▽-->
-      <section class="about">
-        <h2 class="about__ttl">個性を引き出し<br />最大化させる</h2>
-        <h3 class="about__en optima">ABOUT<br />US</h3>
-        <div class="about__txtContainer">
-          <p class="about__txt about__txt--fst">
-            デザインといえば、あるモノを実物以上にカッコよく見せたり、デザインする事で原形がなくなるような。まるで特殊メイクみたいな印象を持たれてる人が多いと思います。
-          </p>
-          <p class="about__txt about__txt--sec">
-            わたしはそういった表層的に取り繕う提案ではなく、クライアント様が持っている個性を見つけ出し、最大限に引き出し、その人特有の魅せ方をご提案させていただきます。
-          </p>
-        </div>
-        <p class="about__link learnMore fsz-1"><a href="#">LEARN MORE</a></p>
-      </section>
-      <!--△ About △-->
-    </section>
-
-    <section class="secSeg">
-      <!--▽ Slider ▽-->
-      <section class="works">
-        <div class="works__txt">
-          <p class="works__ttl fsz-1">WORKS</p>
-          <p class="works__link learnMore fsz-1">LEARN MORE</p>
-        </div>
-        <div class="works__slider">
-          <div class="swiper-container workSlider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/common/slider-01.jpg" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/common/slider-02.jpg" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/common/slider-01.jpg" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/common/slider-02.jpg" alt="" />
-              </div>
-            </div>
-            <div class="swiper-scrollbar"></div>
+    <div class="wrapper">
+      <header class="header">
+        <div class="onlyShowForSp">
+          <div class="header__humb">
+            <span class="header__humb--icon upper"></span>
+            <span class="header__humb--icon down"></span>
+          </div>
+          <div class="header__menu optima humbOff">
+            <p class="header__menu--ttl">MENU</p>
+            <nav>
+              <ul class="header__menuSp--lists">
+                <li class="header__menuSp--list">
+                  <a href="#"
+                    ><span class="header__menuSp--num">01.</span>TOP</a
+                  >
+                </li>
+                <li class="header__menuSp--list">
+                  <a href="#"
+                    ><span class="header__menuSp--num">02.</span>ABOUT</a
+                  >
+                </li>
+                <li class="header__menuSp--list">
+                  <a href="#"
+                    ><span class="header__menuSp--num">03.</span>WORKS</a
+                  >
+                </li>
+                <li class="header__menuSp--list">
+                  <a href="#"
+                    ><span class="header__menuSp--num">04.</span>NEWS</a
+                  >
+                </li>
+                <li class="header__menuSp--list">
+                  <a href="#"
+                    ><span class="header__menuSp--num">05.</span>CONTACT</a
+                  >
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </section>
-      <!--△ Slider △-->
 
-      <!--▽ GetInTouch ▽-->
-      <section class="getInTouch">
-        <p class="getInTouch__en optima">GET IN TOUCH</p>
-        <p class="getInTouch__jp">あなたの個性を聞かせてください</p>
-      </section>
-      <!--△ GetInTouch △-->
-
-      <!--▽ Instagram ▽-->
-      <section class="instagram">
-        <p class="instagram__ttl fsz-1">INSTAGRAM</p>
-        <div class="instagram__imgs"></div>
-      </section>
-      <!--△ Instagram △-->
-
-      <!--▽ Footer ▽-->
-      <footer class="footer">
-        <nav class="pageLinks">
-          <ul class="pageLinks__lists">
-            <li class="pageLinks__list fsz-2">
-              <a href="#" class="pageLinks__list--link">TOP</a>
-            </li>
-            <li class="pageLinks__list fsz-2">
-              <a href="#" class="pageLinks__list--link">ABOUT</a>
-            </li>
-            <li class="pageLinks__list fsz-2">
-              <a href="#" class="pageLinks__list--link">WORKS</a>
-            </li>
-            <li class="pageLinks__list fsz-2">
-              <a href="#" class="pageLinks__list--link">NEWS</a>
-            </li>
-            <li class="pageLinks__list fsz-2">
-              <a href="#" class="pageLinks__list--link">CONTACT</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="sns">
-          <ul class="sns__lists">
-            <li class="sns__list fsz-1"><a href="#">INSTAGRAM</a></li>
-            <li class="sns__list fsz-1"><a href="#">TWITTER</a></li>
-          </ul>
+        <div class="onlyShowForPc">
+          <div class="header__menuPc">
+            <nav>
+              <ul class="header__menuPc--lists">
+                <li class="header__menuPc--list">TOP</li>
+                <li class="header__menuPc--list">ABOUT</li>
+                <li class="header__menuPc--list">WORKS</li>
+                <li class="header__menuPc--list">NEWS</li>
+                <li class="header__menuPc--list">CONTACT</li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </footer>
-      <!--△ Footer △-->
-    </section>
+      </header>
+      <section class="fstSeg">
+        <!--▽ Header ▽-->
+
+        <!--△ Header △-->
+
+        <!--▽ Commontext ▽-->
+        <p class="fstSeg__sideTxt left">&copy;TAKUYA NAKANO 2021</p>
+        <p class="fstSeg__sideTxt right">&copy;TAKUYA NAKANO 2021</p>
+        <!--△ Commontext △-->
+
+        <!--▽ Main ▽-->
+        <section class="fv">
+          <div class="fv__img">
+            <picture>
+              <source
+                srcset="./img/top/portrait-sp.jpg"
+                media="(max-width: 768px)"
+              />
+              <img srcset="./img/top/portrait-pc.jpg" alt="" />
+            </picture>
+          </div>
+          <div class="fv__ttl">
+            <h1 class="fv__ttl--name optima">TAKUYA<br />NAKANO</h1>
+            <p class="fv__ttl--desc">I am a FREELANCE WEB DESIGNER</p>
+          </div>
+        </section>
+        <!--△ Main △-->
+
+        <!--▽ About ▽-->
+        <section class="about">
+          <h2 class="about__ttl">個性を引き出し<br />最大化させる</h2>
+          <h3 class="about__en optima">ABOUT<br />US</h3>
+          <div class="about__txtContainer">
+            <p class="about__txt about__txt--fst">
+              デザインといえば、あるモノを実物以上にカッコよく見せたり、デザインする事で原形がなくなるような。まるで特殊メイクみたいな印象を持たれてる人が多いと思います。
+            </p>
+            <p class="about__txt about__txt--sec">
+              わたしはそういった表層的に取り繕う提案ではなく、クライアント様が持っている個性を見つけ出し、最大限に引き出し、その人特有の魅せ方をご提案させていただきます。
+            </p>
+          </div>
+          <p class="about__link learnMore fsz-1"><a href="#">LEARN MORE</a></p>
+        </section>
+        <!--△ About △-->
+      </section>
+
+      <section class="secSeg">
+        <!--▽ Slider ▽-->
+        <section class="works">
+          <div class="works__txt">
+            <p class="works__ttl fsz-1">WORKS</p>
+            <p class="works__link learnMore fsz-1">LEARN MORE</p>
+          </div>
+          <div class="works__slider">
+            <div class="swiper-container workSlider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="img/common/slider-01.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/common/slider-02.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/common/slider-01.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/common/slider-02.jpg" alt="" />
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        </section>
+        <!--△ Slider △-->
+
+        <!--▽ GetInTouch ▽-->
+        <section class="getInTouch">
+          <p class="getInTouch__en optima">GET IN TOUCH</p>
+          <p class="getInTouch__jp">あなたの個性を聞かせてください</p>
+        </section>
+        <!--△ GetInTouch △-->
+
+        <!--▽ Instagram ▽-->
+        <section class="instagram">
+          <p class="instagram__ttl fsz-1">INSTAGRAM</p>
+          <div class="instagram__imgs"></div>
+        </section>
+        <!--△ Instagram △-->
+
+        <!--▽ Footer ▽-->
+        <footer class="footer">
+          <nav class="pageLinks">
+            <ul class="pageLinks__lists">
+              <li class="pageLinks__list fsz-2">
+                <a href="#" class="pageLinks__list--link">TOP</a>
+              </li>
+              <li class="pageLinks__list fsz-2">
+                <a href="#" class="pageLinks__list--link">ABOUT</a>
+              </li>
+              <li class="pageLinks__list fsz-2">
+                <a href="#" class="pageLinks__list--link">WORKS</a>
+              </li>
+              <li class="pageLinks__list fsz-2">
+                <a href="#" class="pageLinks__list--link">NEWS</a>
+              </li>
+              <li class="pageLinks__list fsz-2">
+                <a href="#" class="pageLinks__list--link">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="sns">
+            <ul class="sns__lists">
+              <li class="sns__list fsz-1"><a href="#">INSTAGRAM</a></li>
+              <li class="sns__list fsz-1"><a href="#">TWITTER</a></li>
+            </ul>
+          </div>
+        </footer>
+        <!--△ Footer △-->
+      </section>
+    </div>
 
     <!--▽JS▽-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -124,7 +124,7 @@
 .footer {
   @include padSpacing;
   .pageLinks {
-    width: calc(280 / 414 * 100vw);
+    width: 37rem;
     margin: 0 auto 1rem 0;
     &__lists {
       display: flex;
@@ -133,7 +133,7 @@
     &__list {
       margin-bottom: 2rem;
       &:not(:last-of-type)::after {
-        content: "";
+        content: '';
         display: inline-block;
         height: 100%;
         width: 0.1rem;
@@ -159,7 +159,7 @@
       align-items: center;
       letter-spacing: 0.15em;
       &::before {
-        content: "";
+        content: '';
         display: inline-block;
         width: 4rem;
         height: 0.1rem;

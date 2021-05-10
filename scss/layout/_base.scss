@@ -1,4 +1,8 @@
 //レイアウト or ブロックの共通設定
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
 .fstSeg {
   padding: 6.5rem 0 10rem;
   background-color: $color-main;
@@ -29,4 +33,19 @@ body {
 }
 .fsz-2 {
   font-size: 1.4rem;
+}
+
+//スマホ、PCでの非表示
+.onlyShowForSp {
+  display: block;
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.onlyShowForPc {
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+  }
 }
