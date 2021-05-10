@@ -1,0 +1,7 @@
+.humbOff {
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+}
+.humbOn {
+  transform: translateX(0);
+}
