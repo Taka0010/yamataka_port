@@ -31,6 +31,8 @@
     margin: 0 auto;
     @include respond(tab-port) {
       width: 600px;
+      position: relative;
+      //
     }
   }
   &__ttl {
@@ -54,12 +56,56 @@
           display: inline;
         }
       }
+      @include respond(desktop) {
+        font-size: 14rem;
+      }
     }
     &--desc {
       font-size: calc(12 / 414 * 100vw);
       text-align: center;
       @include respond(tab-port) {
         font-size: 1.8rem;
+      }
+    }
+  }
+  &__scrollDown {
+    position: absolute;
+    top: 20rem;
+    right: -30%;
+    &--container {
+      width: 12.7rem;
+      height: 12.7rem;
+      position: relative;
+      img {
+        animation: rotation 10s linear infinite;
+      }
+      p {
+        @include absCenter;
+        display: inline-block;
+      }
+    }
+    &--arrow {
+      display: inline-block;
+      vertical-align: middle;
+      color: #333;
+      line-height: 1;
+      position: relative;
+      width: 0.3em;
+      height: 3em;
+      background: currentColor;
+      &::before {
+        content: '';
+        width: 2.25em;
+        height: 2.25em;
+        border: 0.3em solid currentColor;
+        border-left: 0;
+        border-bottom: 0;
+        box-sizing: border-box;
+        transform: rotate(135deg);
+        position: absolute;
+        left: -0.875em;
+        bottom: 0;
+        margin: auto;
       }
     }
   }
@@ -70,6 +116,8 @@
   @include padSpacing;
   @include respond(tab-port) {
     max-width: 100rem;
+    margin: 0 auto;
+    padding: 0;
   }
   &__ttl {
     display: inline-block;
@@ -91,6 +139,7 @@
     opacity: 0.5;
     @include respond(tab-port) {
       font-size: 12rem;
+      top: 4.8rem;
     }
   }
   &__txtContainer {
@@ -99,6 +148,7 @@
     width: calc(300 / 414 * 100vw);
     @include respond(tab-port) {
       max-width: 50rem;
+      margin-top: -3rem;
     }
   }
   &__txt {
