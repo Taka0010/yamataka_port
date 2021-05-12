@@ -3,6 +3,9 @@
   z-index: 10;
   height: 5rem;
   width: 100%;
+  @include respond(tab-port) {
+    height: 10rem;
+  }
   &__humb {
     position: relative;
     z-index: 100;
@@ -63,12 +66,18 @@
   &__menuPc {
     position: relative;
     top: 3rem;
+    @include respond(tab-port) {
+      top: 4rem;
+    }
     &--lists {
       display: flex;
       align-items: center;
       justify-content: space-around;
       font-size: calc(18 / 1366 * 100vw);
       letter-spacing: 0.15em;
+      @include respond(tab-port) {
+        font-size: 1.8rem;
+      }
       @include respond(laptop) {
         font-size: 1.8rem;
       }

@@ -15,6 +15,12 @@ humbIcon.addEventListener('click', function () {
 // // import "../node_modules/swiper/swiper-bundle.css";
 const swiper = new Swiper('.workSlider', {
   slidesPerView: 1.2,
+  breakpoints: {
+    // 768px以上の場合
+    768: {
+      slidesPerView: 2.3,
+    },
+  },
   spaceBetween: 15,
   scrollbar: {
     el: '.swiper-scrollbar',

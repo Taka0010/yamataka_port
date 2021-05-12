@@ -1,6 +1,6 @@
 .humbOff {
   transform: translateX(-100%);
-  transition: transform 0.2s ease;
+  transition: transform 0.4s $easeInOutExpo;
 }
 .humbOn {
   transform: translateX(0);

@@ -7,6 +7,9 @@
   padding: 6.5rem 0 10rem;
   background-color: $color-main;
   color: $color-sub;
+  @include respond(tab-port) {
+    padding: 12rem 0 20rem;
+  }
   a {
     color: $color-sub;
   }
@@ -15,6 +18,9 @@
   padding: 15rem 0 10rem;
   background-color: $color-sub;
   color: $color-main;
+  @include respond(tab-port) {
+    padding: 12rem 0 13rem;
+  }
   a {
     color: $color-main;
   }
@@ -30,9 +36,15 @@ body {
 }
 .fsz-1 {
   font-size: 1.5rem;
+  @include respond(tab-port) {
+    font-size: 1.8rem;
+  }
 }
 .fsz-2 {
   font-size: 1.4rem;
+  @include respond(tab-port) {
+    font-size: 1.6rem;
+  }
 }
 
 //スマホ、PCでの非表示
