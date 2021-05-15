@@ -52,6 +52,9 @@
     &--list {
       font-size: calc(50 / 414 * 100vw);
       margin-bottom: 4rem;
+      transform: translateX(-4rem);
+      opacity: 0;
+      transition: all 0.2s $easeInOutSine;
       a {
         color: #fff;
       }

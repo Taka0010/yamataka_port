@@ -1,8 +1,17 @@
+.humbIconColor {
+  background-color: $color-grey;
+}
+
 .humbOff {
   transform: translateX(-100%);
   transition: transform 0.4s $easeInOutExpo;
 }
 .humbOn {
+  transform: translateX(0);
+}
+
+.slideIn {
+  opacity: 1;
   transform: translateX(0);
 }
 
@@ -13,4 +22,14 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s;
+}
+
+.block--hidden {
+  opacity: 0 !important;
+  transform: translateY(1rem) scaleY(0.8);
+  transform-origin: bottom;
+}
+
+.showUp {
+  transition: all 1s $easeInOutQuart;
 }
