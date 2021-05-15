@@ -124,13 +124,21 @@
         <!--▽ Main ▽-->
         <section class="fv">
           <div class="fv__img">
-            <picture>
-              <source
-                srcset="./img/top/portrait-sp.jpg"
-                media="(max-width: 768px)"
-              />
-              <img srcset="./img/top/portrait-pc.jpg" alt="" />
-            </picture>
+            <div class="fv__img--container">
+              <picture>
+                <source
+                  srcset="./img/top/portrait-sp.jpg"
+                  media="(max-width: 768px)"
+                />
+                <img srcset="./img/top/portrait-pc.jpg" alt="" />
+              </picture>
+              <h1 class="fv__img--innerName optima">
+                TAKUYA<br class="onlyShowForSp" /><span class="onlyShowForPc"
+                  >&nbsp;</span
+                >NAKANO
+              </h1>
+            </div>
+
             <div class="fv__scrollDown onlyShowForPc">
               <div class="fv__scrollDown--container">
                 <img src="img/top/scrollTxt.svg" alt="DOWN SCROLL" />

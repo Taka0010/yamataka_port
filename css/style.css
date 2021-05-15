@@ -115,6 +115,14 @@ table {
 .humbOn {
   transform: translateX(0); }
 
+.coloring {
+  color: #ffff9d !important; }
+
+.disappear {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s; }
+
 .learnMore {
   position: relative;
   padding-right: 2.5rem; }
@@ -268,7 +276,8 @@ body {
       align-items: center;
       justify-content: space-around;
       font-size: calc(18 / 1366 * 100vw);
-      letter-spacing: 0.15em; }
+      letter-spacing: 0.15em;
+      transition: all 0.3s ease; }
       @media only screen and (min-width: 768px) {
         .header__menuPc--lists {
           font-size: 1.8rem; } }
@@ -279,11 +288,14 @@ body {
 .fstSeg {
   position: relative; }
   .fstSeg__sideTxt {
-    position: absolute;
+    position: fixed;
     display: inline-block;
     font-size: 8px;
     top: 400px;
-    opacity: 0.5; }
+    color: #222222;
+    opacity: 0.5;
+    z-index: 5;
+    transition: color 0.3s ease; }
   .fstSeg .left {
     left: 3%;
     transform-origin: left center;
@@ -306,6 +318,35 @@ body {
       .fv__img {
         width: 600px;
         position: relative; } }
+    .fv__img--container {
+      overflow: hidden;
+      position: relative;
+      width: calc(320 / 414 * 100vw); }
+      @media only screen and (min-width: 768px) {
+        .fv__img--container {
+          width: 600px; } }
+    .fv__img--innerName {
+      width: 95vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 73.5%;
+      z-index: 3;
+      font-size: calc(70.1 / 414 * 100vw);
+      line-height: 1.16;
+      letter-spacing: 12px;
+      text-align: center;
+      margin-bottom: 7px; }
+      @media only screen and (min-width: 768px) {
+        .fv__img--innerName {
+          font-size: calc(130 / 1366 * 100vw);
+          top: 56.5%; }
+          .fv__img--innerName span {
+            display: inline; } }
+      @media only screen and (min-width: 1200px) {
+        .fv__img--innerName {
+          font-size: 14rem; } }
   .fv__ttl {
     position: absolute;
     top: 50%;
@@ -319,11 +360,13 @@ body {
         width: 95%;
         top: 58%; } }
     .fv__ttl--name {
-      font-size: calc(70 / 414 * 100vw);
+      font-size: calc(69.9 / 414 * 100vw);
       line-height: 1.16;
       letter-spacing: 12px;
       text-align: center;
-      margin-bottom: 7px; }
+      margin-bottom: 7px;
+      color: #d1d1d1;
+      z-index: 4; }
       @media only screen and (min-width: 768px) {
         .fv__ttl--name {
           font-size: calc(130 / 1366 * 100vw); }

@@ -75,6 +75,7 @@
       justify-content: space-around;
       font-size: calc(18 / 1366 * 100vw);
       letter-spacing: 0.15em;
+      transition: all 0.3s ease;
       @include respond(tab-port) {
         font-size: 1.8rem;
       }

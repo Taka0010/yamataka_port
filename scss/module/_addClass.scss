@@ -5,3 +5,12 @@
 .humbOn {
   transform: translateX(0);
 }
+
+.coloring {
+  color: $color-main !important;
+}
+.disappear {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s;
+}

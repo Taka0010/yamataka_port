@@ -2,11 +2,14 @@
 .fstSeg {
   position: relative;
   &__sideTxt {
-    position: absolute;
+    position: fixed;
     display: inline-block;
     font-size: 8px;
     top: 400px;
+    color: $color-sub;
     opacity: 0.5;
+    z-index: 5;
+    transition: color 0.3s ease;
   }
   .left {
     left: 3%;
@@ -27,12 +30,44 @@
     margin-bottom: 25rem;
   }
   &__img {
+    // position: relative;
     width: calc(320 / 414 * 100vw);
     margin: 0 auto;
+    // overflow: hidden;
     @include respond(tab-port) {
       width: 600px;
       position: relative;
-      //
+    }
+    &--container {
+      overflow: hidden;
+      position: relative;
+      width: calc(320 / 414 * 100vw);
+      @include respond(tab-port) {
+        width: 600px;
+      }
+    }
+    &--innerName {
+      width: 95vw;
+      @include absCenter;
+      top: 73.5%;
+      z-index: 3;
+      font-size: calc(70.1 / 414 * 100vw);
+      line-height: 1.16;
+      letter-spacing: 12px;
+      text-align: center;
+      margin-bottom: 7px;
+      @include respond(tab-port) {
+        font-size: calc(130 / 1366 * 100vw);
+        top: 56.5%;
+        // left: 53%;
+        span {
+          display: inline;
+        }
+      }
+      @include respond(desktop) {
+        // left: 50%;
+        font-size: 14rem;
+      }
     }
   }
   &__ttl {
@@ -45,11 +80,13 @@
       top: 58%;
     }
     &--name {
-      font-size: calc(70 / 414 * 100vw);
+      font-size: calc(69.9 / 414 * 100vw);
       line-height: 1.16;
       letter-spacing: 12px;
       text-align: center;
       margin-bottom: 7px;
+      color: $color-grey;
+      z-index: 4;
       @include respond(tab-port) {
         font-size: calc(130 / 1366 * 100vw);
         span {
