@@ -1,13 +1,47 @@
 'use strict';
-
+// document.querySelector('.about__ttl').classList.add('block--hidden');
 //////// HUMBERGER //////////
 const humbIcon = document.querySelector('.header__humb');
 const barUp = document.querySelector('.upper');
 const barDown = document.querySelector('.down');
 const humbMenu = document.querySelector('.header__menu');
+const humbBars = document.querySelectorAll('.header__humb--icon');
+const navLists = document.querySelectorAll('.header__menuSp--list');
+let navListsArr = [];
+navLists.forEach((el) => navListsArr.push(el));
+
 humbIcon.addEventListener('click', function () {
   console.log('hi');
   humbMenu.classList.toggle('humbOn');
+});
+
+const humbBarColoring = function () {
+  humbBars.forEach((el) => {
+    el.classList.toggle('humbIconColor');
+  });
+};
+
+const humbListSlidein = function () {
+  setTimeout(function () {
+    for (let i = 0; i < navListsArr.length; i++) {
+      setTimeout(function () {
+        navListsArr[i].classList.toggle('slideIn');
+      }, 80 * i);
+    }
+  }, 300);
+};
+
+humbIcon.addEventListener('click', () => {
+  humbBarColoring();
+  humbListSlidein();
+});
+
+navLists.forEach((list) => {
+  list.addEventListener('click', () => {
+    humbBarColoring();
+    humbMenu.classList.toggle('humbOn');
+    humbListSlidein();
+  });
 });
 
 //////// NAVIGATION //////////
@@ -89,6 +123,28 @@ const sideTxtObserver = new IntersectionObserver(sideTxtColorig, {
   rootMargin: `-${sideTxtHeight * 2}px`,
 });
 sideTxtObserver.observe(fstSeg);
+
+//////// テキスト浮上 //////////
+const txtBlock = document.querySelectorAll('.showUp');
+console.log(txtBlock);
+txtBlock.forEach((el) => {
+  // console.log(el.length);
+  el.classList.add('block--hidden');
+  // console.log(el);
+});
+const txtBlockShowUp = function (entries, observer) {
+  const [entry] = entries;
+  entry.target.classList.remove('block--hidden');
+  observer.unobserve(entry.target);
+};
+const txtBlockObserver = new IntersectionObserver(txtBlockShowUp, {
+  root: null,
+  threshold: 0,
+  rootMargin: '-100px',
+});
+txtBlock.forEach((block) => {
+  txtBlockObserver.observe(block);
+});
 
 //////// Swiper.js //////////
 const swiper = new Swiper('.workSlider', {

@@ -51,7 +51,7 @@
       @include absCenter;
       top: 73.5%;
       z-index: 3;
-      font-size: calc(70.1 / 414 * 100vw);
+      font-size: calc(70 / 414 * 100vw);
       line-height: 1.16;
       letter-spacing: 12px;
       text-align: center;
@@ -64,23 +64,23 @@
           display: inline;
         }
       }
-      @include respond(desktop) {
-        // left: 50%;
-        font-size: 14rem;
-      }
+      // @include respond(desktop) {
+      //   // left: 50%;
+      //   font-size: 14rem;
+      // }
     }
   }
   &__ttl {
     @include absCenter;
     top: 75%;
-    width: 90%;
+    width: 95vw;
     margin: 0 auto;
     @include respond(tab-port) {
       width: 95%;
       top: 58%;
     }
     &--name {
-      font-size: calc(69.9 / 414 * 100vw);
+      font-size: calc(70 / 414 * 100vw);
       line-height: 1.16;
       letter-spacing: 12px;
       text-align: center;
@@ -93,9 +93,9 @@
           display: inline;
         }
       }
-      @include respond(desktop) {
-        font-size: 14rem;
-      }
+      // @include respond(desktop) {
+      //   font-size: 14rem;
+      // }
     }
     &--desc {
       font-size: calc(12 / 414 * 100vw);
