@@ -567,6 +567,38 @@ body {
 .humbIconColor {
   background-color: #d1d1d1; }
 
+.humbBarUpMove {
+  animation: humbBarUpMove 0.8s ease-in forwards; }
+
+.humbBarUpMoveOff {
+  animation: humbBarUpMove 0.8s ease-in;
+  animation-direction: alternate-reverse; }
+
+.humbBarDownMove {
+  animation: humbBarDownMove 0.8s ease-in forwards; }
+
+@keyframes humbBarUpMove {
+  0% {
+    top: 3rem;
+    transform: rotateZ(0); }
+  50% {
+    top: 3.3rem;
+    transform: rotateZ(0); }
+  100% {
+    top: 3.3rem;
+    transform: rotateZ(45deg); } }
+
+@keyframes humbBarDownMove {
+  0% {
+    top: 3.6rem;
+    transform: rotateZ(0); }
+  50% {
+    top: 3.2rem;
+    transform: rotateZ(0); }
+  100% {
+    top: 3.2rem;
+    transform: rotateZ(-45deg); } }
+
 .humbOff {
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(1, 0, 0, 1); }
