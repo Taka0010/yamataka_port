@@ -12,6 +12,8 @@ navLists.forEach((el) => navListsArr.push(el));
 
 humbIcon.addEventListener('click', function () {
   console.log('hi');
+  barUp.classList.toggle('humbBarUpMove');
+  barDown.classList.toggle('humbBarDownMove');
   humbMenu.classList.toggle('humbOn');
 });
 
@@ -40,6 +42,8 @@ navLists.forEach((list) => {
   list.addEventListener('click', () => {
     humbBarColoring();
     humbMenu.classList.toggle('humbOn');
+    barUp.classList.toggle('humbBarUpMove');
+    barDown.classList.toggle('humbBarDownMove');
     humbListSlidein();
   });
 });
