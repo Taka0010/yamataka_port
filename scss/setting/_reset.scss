@@ -33,6 +33,7 @@ img {
 
 a {
   text-decoration: none;
+  color: currentColor;
 }
 
 ul,
@@ -89,11 +90,11 @@ select {
   -webkit-appearance: none;
 }
 button,
-input[type="reset"],
-input[type="button"],
-input[type="submit"],
-input[type="checkbox"],
-input[type="radio"],
+input[type='reset'],
+input[type='button'],
+input[type='submit'],
+input[type='checkbox'],
+input[type='radio'],
 select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -104,7 +105,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   text-indent: 0.01px;
-  text-overflow: "";
+  text-overflow: '';
 }
 select::-ms-expand {
   display: none;

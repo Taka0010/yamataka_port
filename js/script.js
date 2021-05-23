@@ -60,7 +60,6 @@ const footer = document.querySelector('.footer');
 const handleHover = function (e, opacity) {
   if (e.target.classList.contains('header__menuPc--list')) {
     const link = e.target;
-
     const siblings = link
       .closest('.header__menuPc--lists')
       .querySelectorAll('.header__menuPc--list');
@@ -95,8 +94,19 @@ pcNavObserver.observe(fstSeg);
 // フッターでの消失
 const footerDisappear = function (entries) {
   const [entry] = entries;
-  if (!entry.isIntersecting) headerPc.classList.remove('disappear');
-  else headerPc.classList.add('disappear');
+  if (!entry.isIntersecting) {
+    headerPc.classList.remove('disappear');
+    followArrow.classList.remove('wayback');
+    // setTimeout(function () {
+    //   followArrow.classList.remove('test');
+    // }, 300);
+  } else {
+    headerPc.classList.add('disappear');
+    followArrow.classList.add('wayback');
+    // setTimeout(function () {
+    //   followArrow.classList.add('test');
+    // }, 300);
+  }
 };
 const footerObserver = new IntersectionObserver(footerDisappear, {
   root: null,
@@ -132,9 +142,7 @@ sideTxtObserver.observe(fstSeg);
 const txtBlock = document.querySelectorAll('.showUp');
 console.log(txtBlock);
 txtBlock.forEach((el) => {
-  // console.log(el.length);
   el.classList.add('block--hidden');
-  // console.log(el);
 });
 const txtBlockShowUp = function (entries, observer) {
   const [entry] = entries;
@@ -144,10 +152,30 @@ const txtBlockShowUp = function (entries, observer) {
 const txtBlockObserver = new IntersectionObserver(txtBlockShowUp, {
   root: null,
   threshold: 0,
-  rootMargin: '-100px',
+  rootMargin: '-10px',
 });
 txtBlock.forEach((block) => {
   txtBlockObserver.observe(block);
+});
+
+//////// マウスオーバー //////////
+// const secSeg = document.querySelector('.secSeg');
+const followTxt = document.querySelector('.follower__txt');
+const followArrow = document.querySelector('.mouse__scrollDown--arrow');
+const arrow = document.querySelector('.cursor');
+
+console.log(followTxt.getAttribute('src'));
+secSeg.addEventListener('mouseover', function () {
+  // console.log('Hi');
+  // const followTxt = document.querySelector('.follower__txt');
+  followArrow.style.color = '#ffff9d';
+  followTxt.setAttribute('src', 'img/top/scrollTxt_yellow.svg');
+});
+secSeg.addEventListener('mouseout', function () {
+  // console.log('Hi');
+  // const followTxt = document.querySelector('.follower__txt');
+  followArrow.style.color = '#222222';
+  followTxt.setAttribute('src', 'img/top/scrollTxt_black.svg');
 });
 
 //////// Swiper.js //////////
@@ -178,3 +206,55 @@ import 'core-js/stable';
 // Polifilling async functions
 import 'regenerator-runtime/runtime';
 */
+
+//////// マウス制御 //////////
+var cursor = $('.cursor'),
+  follower = $('.follower'),
+  cWidth = 8, //カーソルの大きさ
+  fWidth = 127, //フォロワーの大きさ
+  delay = 3, //数字を大きくするとフォロワーがより遅れて来る
+  mouseX = 0, //マウスのX座標
+  mouseY = 0, //マウスのY座標
+  posX = 0, //フォロワーのX座標
+  posY = 0; //フォロワーのX座標
+
+//カーソルの遅延アニメーション
+//ほんの少ーーーしだけ遅延させる 0.001秒
+TweenMax.to({}, 0.001, {
+  repeat: -1,
+  onRepeat: function () {
+    posX += (mouseX - posX) / delay;
+    posY += (mouseY - posY) / delay;
+
+    TweenMax.set(follower, {
+      css: {
+        left: posX - fWidth / 2,
+        top: posY - fWidth / 2,
+      },
+    });
+
+    TweenMax.set(cursor, {
+      css: {
+        left: mouseX - cWidth / 2,
+        top: mouseY - cWidth / 2,
+      },
+    });
+  },
+});
+
+//マウス座標を取得
+$(document).on('mousemove', function (e) {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+});
+
+$('a').on({
+  mouseenter: function () {
+    // cursor.addClass('is-active');
+    follower.addClass('is-active');
+  },
+  mouseleave: function () {
+    // cursor.removeClass('is-active');
+    follower.removeClass('is-active');
+  },
+});

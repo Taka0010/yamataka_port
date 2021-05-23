@@ -56,6 +56,26 @@
     <!--△FONT△-->
   </head>
   <body>
+    <!--▽ マウスカーソル ▽-->
+    <div class="mouse">
+      <div class="cursor">
+        <p><span class="mouse__scrollDown--arrow"></span></p>
+      </div>
+      <div class="follower">
+        <div class="mouse__scrollDown onlyShowForPc">
+          <div class="mouse__scrollDown--container">
+            <span
+              ><img
+                class="follower__txt"
+                src="img/top/scrollTxt_black.svg"
+                alt="DOWN SCROLL"
+            /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--△ マウスカーソル △-->
     <div class="wrapper">
       <header class="header">
         <div class="onlyShowForSp">
@@ -101,11 +121,11 @@
           <div class="header__menuPc">
             <nav>
               <ul class="header__menuPc--lists">
-                <li class="header__menuPc--list">TOP</li>
-                <li class="header__menuPc--list">ABOUT</li>
-                <li class="header__menuPc--list">WORKS</li>
-                <li class="header__menuPc--list">NEWS</li>
-                <li class="header__menuPc--list">CONTACT</li>
+                <li><a href="#" class="header__menuPc--list">TOP</a></li>
+                <li><a href="#" class="header__menuPc--list">ABOUT</a></li>
+                <li><a href="#" class="header__menuPc--list">WORKS</a></li>
+                <li><a href="#" class="header__menuPc--list">NEWS</a></li>
+                <li><a href="#" class="header__menuPc--list">CONTACT</a></li>
               </ul>
             </nav>
           </div>
@@ -117,8 +137,8 @@
         <!--△ Header △-->
 
         <!--▽ Commontext ▽-->
-        <p class="fstSeg__sideTxt left">&copy;TAKUYA NAKANO 2021</p>
-        <p class="fstSeg__sideTxt right">&copy;TAKUYA NAKANO 2021</p>
+        <p class="fstSeg__sideTxt left">&copy;NORIO OZAKI 2021</p>
+        <p class="fstSeg__sideTxt right">&copy;NORIO OZAKI 2021</p>
         <!--△ Commontext △-->
 
         <!--▽ Main ▽-->
@@ -133,24 +153,24 @@
                 <img srcset="./img/top/portrait-pc.jpg" alt="" />
               </picture>
               <h1 class="fv__img--innerName optima">
-                TAKUYA<br class="onlyShowForSp" /><span class="onlyShowForPc"
+                NORIO<br class="onlyShowForSp" /><span class="onlyShowForPc"
                   >&nbsp;</span
-                >NAKANO
+                >OZAKI
               </h1>
             </div>
 
-            <div class="fv__scrollDown onlyShowForPc">
+            <!-- <div class="fv__scrollDown onlyShowForPc">
               <div class="fv__scrollDown--container">
-                <img src="img/top/scrollTxt.svg" alt="DOWN SCROLL" />
+                <img src="img/top/scrollTxt_black.svg" alt="DOWN SCROLL" />
                 <p><span class="fv__scrollDown--arrow"></span></p>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="fv__ttl">
             <h1 class="fv__ttl--name optima">
-              TAKUYA<br class="onlyShowForSp" /><span class="onlyShowForPc"
+              NORIO<br class="onlyShowForSp" /><span class="onlyShowForPc"
                 >&nbsp;</span
-              >NAKANO
+              >OZAKI
             </h1>
             <p class="fv__ttl--desc">I am a FREELANCE WEB DESIGNER</p>
           </div>
@@ -159,8 +179,10 @@
 
         <!--▽ About ▽-->
         <section class="about showUp">
-          <h3 class="about__ttl showUp">個性を引き出し<br />最大化させる</h3>
-          <h3 class="about__en optima showUp">ABOUT<br />US</h3>
+          <div class="maskBlock">
+            <h3 class="about__ttl showUp">個性を引き出し<br />最大化させる</h3>
+          </div>
+          <h3 class="about__en optima">ABOUT<br />US</h3>
           <div class="about__txtContainer">
             <p class="about__txt about__txt--fst">
               デザインといえば、あるモノを実物以上にカッコよく見せたり、デザインする事で原形がなくなるような。まるで特殊メイクみたいな印象を持たれてる人が多いと思います。
@@ -181,7 +203,9 @@
         <section class="works">
           <div class="works__txt">
             <p class="works__ttl fsz-1">WORKS</p>
-            <p class="works__link learnMore fsz-1">LEARN MORE</p>
+            <p class="works__link learnMore fsz-1">
+              <a href="#">LEARN MORE</a>
+            </p>
           </div>
           <div class="works__slider">
             <div class="swiper-container workSlider">
@@ -207,7 +231,11 @@
 
         <!--▽ GetInTouch ▽-->
         <section class="getInTouch">
-          <p class="getInTouch__en optima showUp">GET IN TOUCH</p>
+          <div class="maskBlock">
+            <p class="getInTouch__en optima showUp">
+              <a href="#">GET IN TOUCH</a>
+            </p>
+          </div>
           <p class="getInTouch__jp">あなたの個性を聞かせてください</p>
         </section>
         <!--△ GetInTouch △-->
@@ -253,7 +281,7 @@
 
     <!--▽JS▽-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script defer src="js/swiper.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 
     <!--△JS△-->
   </body>
