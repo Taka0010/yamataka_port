@@ -105,47 +105,47 @@
       }
     }
   }
-  &__scrollDown {
-    position: absolute;
-    top: 20rem;
-    right: -30%;
-    &--container {
-      width: 12.7rem;
-      height: 12.7rem;
-      position: relative;
-      img {
-        animation: rotation 10s linear infinite;
-      }
-      p {
-        @include absCenter;
-        display: inline-block;
-      }
-    }
-    &--arrow {
-      display: inline-block;
-      vertical-align: middle;
-      color: #333;
-      line-height: 1;
-      position: relative;
-      width: 0.3em;
-      height: 3em;
-      background: currentColor;
-      &::before {
-        content: '';
-        width: 2.25em;
-        height: 2.25em;
-        border: 0.3em solid currentColor;
-        border-left: 0;
-        border-bottom: 0;
-        box-sizing: border-box;
-        transform: rotate(135deg);
-        position: absolute;
-        left: -0.875em;
-        bottom: 0;
-        margin: auto;
-      }
-    }
-  }
+  // &__scrollDown {
+  //   position: absolute;
+  //   top: 20rem;
+  //   right: -30%;
+  //   &--container {
+  //     width: 12.7rem;
+  //     height: 12.7rem;
+  //     position: relative;
+  //     img {
+  //       animation: rotation 10s linear infinite;
+  //     }
+  //     p {
+  //       @include absCenter;
+  //       display: inline-block;
+  //     }
+  //   }
+  //   &--arrow {
+  //     display: inline-block;
+  //     vertical-align: middle;
+  //     color: #333;
+  //     line-height: 1;
+  //     position: relative;
+  //     width: 0.3em;
+  //     height: 3em;
+  //     background: currentColor;
+  //     &::before {
+  //       content: '';
+  //       width: 2.25em;
+  //       height: 2.25em;
+  //       border: 0.3em solid currentColor;
+  //       border-left: 0;
+  //       border-bottom: 0;
+  //       box-sizing: border-box;
+  //       transform: rotate(135deg);
+  //       position: absolute;
+  //       left: -0.875em;
+  //       bottom: 0;
+  //       margin: auto;
+  //     }
+  //   }
+  // }
 }
 
 .about {
@@ -156,12 +156,15 @@
     margin: 0 auto;
     padding: 0;
   }
+  .maskBlock {
+    margin-bottom: 7.5rem;
+  }
   &__ttl {
     display: inline-block;
     font-size: calc(35 / 414 * 100vw);
     letter-spacing: 2px;
     line-height: 1.34;
-    margin-bottom: 7.5rem;
+    // margin-bottom: 7.5rem;
     @include respond(tab-port) {
       font-size: 6rem;
     }
@@ -232,17 +235,24 @@
 
 .getInTouch {
   margin-bottom: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .maskBlock {
+    padding-bottom: 3rem;
+  }
   &__en {
     font-size: calc(50 / 414 * 100vw);
     text-align: center;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     text-decoration: underline;
+    display: inline-block;
     @include respond(tab-port) {
       font-size: 12rem;
-      margin-bottom: 2.5rem;
     }
   }
   &__jp {
+    margin-top: -1rem;
     font-size: calc(15 / 414 * 100vw);
     text-align: center;
     color: #fff;

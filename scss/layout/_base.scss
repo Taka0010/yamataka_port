@@ -18,6 +18,7 @@
   padding: 15rem 0 10rem;
   background-color: $color-sub;
   color: $color-main;
+  background-blend-mode: soft-light;
   @include respond(tab-port) {
     padding: 12rem 0 13rem;
   }
