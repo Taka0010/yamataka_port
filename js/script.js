@@ -170,12 +170,22 @@ secSeg.addEventListener('mouseover', function () {
   // const followTxt = document.querySelector('.follower__txt');
   followArrow.style.color = '#ffff9d';
   followTxt.setAttribute('src', 'img/top/scrollTxt_yellow.svg');
+  header.addEventListener('mouseover', function () {
+    if (headerPc.classList.contains('coloring')) {
+      followArrow.style.color = '#ffff9d';
+      followTxt.setAttribute('src', 'img/top/scrollTxt_yellow.svg');
+    }
+  });
 });
 secSeg.addEventListener('mouseout', function () {
   // console.log('Hi');
   // const followTxt = document.querySelector('.follower__txt');
   followArrow.style.color = '#222222';
   followTxt.setAttribute('src', 'img/top/scrollTxt_black.svg');
+  // header.addEventListener('mouseout', function () {
+  //   followArrow.style.color = '#222222';
+  //   followTxt.setAttribute('src', 'img/top/scrollTxt_black.svg');
+  // });
 });
 
 //////// Swiper.js //////////
