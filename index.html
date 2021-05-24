@@ -17,7 +17,22 @@
     <!--△CSS△-->
 
     <!--▽SCRIPT▽-->
+
     <script defer src="js/lib/swiper.js"></script>
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <script defer src="js/lib/mosaicIn.js"></script>
+
+    <script
+      defer
+      src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"
+    ></script>
     <script defer src="js/script.js"></script>
     <!--△SCRIPT△-->
 
@@ -150,7 +165,11 @@
                   srcset="./img/top/portrait-sp.jpg"
                   media="(max-width: 768px)"
                 />
-                <img srcset="./img/top/portrait-pc.jpg" alt="" />
+                <img
+                  class="mosaic-in"
+                  srcset="./img/top/portrait-pc.jpg"
+                  alt=""
+                />
               </picture>
               <h1 class="fv__img--innerName optima">
                 NORIO<br class="onlyShowForSp" /><span class="onlyShowForPc"
@@ -243,7 +262,43 @@
         <!--▽ Instagram ▽-->
         <section class="instagram">
           <p class="instagram__ttl fsz-1">INSTAGRAM</p>
-          <div class="instagram__imgs"></div>
+          <div class="instagram__imgs">
+            <div class="insta_sizer"></div>
+            <!-- <div class="insta_list"> -->
+            <ul class="insta_list">
+              <!-- <li class="insta_brick js-item">
+                <img src="img/top/portrait-sp.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-pc.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-sp.jpg" alt="" />
+              </li>
+              <li class="insta_brick insta_brick-wide js-item">
+                <img src="img/top/portrait-pc.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-pc.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-pc.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-sp.jpg" alt="" />
+              </li>
+              <li class="insta_brick insta_brick-wide js-item">
+                <img src="img/top/portrait-pc.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-sp.jpg" alt="" />
+              </li>
+              <li class="insta_brick js-item">
+                <img src="img/top/portrait-pc.jpg" alt="" />
+              </li> -->
+            </ul>
+          </div>
+          <!-- </div> -->
         </section>
         <!--△ Instagram △-->
 
@@ -280,7 +335,6 @@
     </div>
 
     <!--▽JS▽-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 
     <!--△JS△-->

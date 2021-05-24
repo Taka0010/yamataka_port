@@ -1,5 +1,17 @@
 'use strict';
 // document.querySelector('.about__ttl').classList.add('block--hidden');
+$(function () {
+  $(document).ready(function () {
+    $('.mosaic-in').mosaicIn({
+      duration: 1500,
+    });
+  });
+});
+// document.addEventListener('DOMContentLoaded', function () {
+//   document.querySelector('.mosaic-in').mosaicIn({
+//     duration: 1500,
+//   });
+// });
 //////// HUMBERGER //////////
 const humbIcon = document.querySelector('.header__humb');
 const barUp = document.querySelector('.upper');
@@ -268,3 +280,84 @@ $('a').on({
     follower.removeClass('is-active');
   },
 });
+
+//////// インスタ読み込み //////////
+$(function () {
+  $.ajax({
+    type: 'GET',
+    url: 'https://graph.facebook.com/v5.0/17841401896304896?fields=name%2Cmedia.limit(18)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cthumbnail_url%2Cmedia_type%2Cusername%7D&access_token=EAAIInQxewKcBAAmTIWSFBsAO3FuPnVnRNGa62Cz60uSaZAIEcfBYL4ygFdGG1AryodJDNiFycZAebd1W2YzY4GfthRgU0xEUBm736ZChzNKZC9N016br9Eu1ZBPC6e1PZBIGmzwHlr485rDtb1WVQDbOJR8fRFsvrlnZBfegqtpbcqhRB7Ezf4i',
+    dataType: 'json',
+    success: function (json) {
+      var html = '';
+      var insta = json.media.data;
+      for (var i = 0; i < insta.length; i++) {
+        var media_type = insta[i].media_type;
+        if (
+          insta[i].media_type == 'IMAGE' ||
+          insta[i].media_type == 'CAROUSEL_ALBUM'
+        ) {
+          if (i === 4 || i === 7) {
+            html +=
+              '<li class="insta_brick insta_brick-wide js-item"><img src="' +
+              insta[i].media_url +
+              '"></li>';
+          } else {
+            html +=
+              '<li class="insta_brick js-item"><img src="' +
+              insta[i].media_url +
+              '"></li>';
+          }
+        } else if (media_type == 'VIDEO') {
+          html +=
+            '<li class="insta_brick js-item"><img src="' +
+            insta[i].thumbnail_url +
+            '"></li>';
+          var media_type = '';
+        }
+      }
+      $('.insta_list').append(html);
+
+      var $demo1 = $('.insta_list'); //コンテナとなる要素を指定
+
+      $demo1.imagesLoaded(function () {
+        //imagesLoadedを使用し、画像が読み込みまれた段階でMasonryの関数を実行させる
+        //Masonryの関数↓
+        $demo1.masonry({
+          //オプション指定箇所
+          itemSelector: '.js-item', //コンテンツを指定
+          // percentPosition: true,
+          columnWidth: '.insta_brick', //カラム幅を設定
+          // horizontalOrder: true,
+          fitWidth: true, //コンテンツ数に合わせ親の幅を自動調整
+          originTop: true,
+          // isAnimated: true,
+        });
+        // $demo1.mansory('layout');
+      });
+    },
+    error: function () {
+      console.log('Error');
+      //エラー時の処理
+    },
+  });
+});
+
+// $(window).on('load', function () {
+//   var $demo1 = $('.insta_list'); //コンテナとなる要素を指定
+
+//   $demo1.imagesLoaded(function () {
+//     //imagesLoadedを使用し、画像が読み込みまれた段階でMasonryの関数を実行させる
+//     //Masonryの関数↓
+//     $demo1.masonry({
+//       //オプション指定箇所
+//       itemSelector: '.js-item', //コンテンツを指定
+//       // percentPosition: true,
+//       columnWidth: '.insta_brick', //カラム幅を設定
+//       // horizontalOrder: true,
+//       fitWidth: true, //コンテンツ数に合わせ親の幅を自動調整
+//       originTop: true,
+//       // isAnimated: true,
+//     });
+//     // $demo1.mansory('layout');
+//   });
+// });
