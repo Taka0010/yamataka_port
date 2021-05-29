@@ -172,7 +172,7 @@
         $(this).on('error', $.proxy(onError, this, id));
         timerId[id] = global.setTimeout(
           $.proxy(waitUntilSuccess, this, id),
-          50
+          10
         );
       } else {
         if (typeof element !== 'undefined') {

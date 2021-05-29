@@ -196,7 +196,7 @@ a {
   color: #222222; }
   @media only screen and (min-width: 768px) {
     .fstSeg {
-      padding: 12rem 0 20rem; } }
+      padding: 10rem 0 20rem; } }
   .fstSeg a {
     color: #222222; }
 
@@ -242,10 +242,15 @@ body {
     .onlyShowForPc {
       display: block; } }
 
+.onlyShowForMouse {
+  display: none; }
+  @media only screen and (min-width: 992px) {
+    .onlyShowForMouse {
+      display: block; } }
+
 .header {
   position: fixed;
   z-index: 10;
-  height: 5rem;
   width: 100%; }
   @media only screen and (min-width: 768px) {
     .header {
@@ -270,13 +275,12 @@ body {
   .header__menu {
     position: absolute;
     width: 100%;
-    height: 100vh;
     background-color: #222222;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: calc(90 / 414 * 100vw) calc(20 / 414 * 100vw); }
+    padding: calc(50 / 414 * 100vw) calc(20 / 414 * 100vw); }
     .header__menu--ttl {
       font-size: calc(80 / 414 * 100vw);
       color: #d1d1d1;
@@ -286,7 +290,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 57%;
+    top: 50%;
     left: 57%; }
   .header__menuSp--list {
     font-size: calc(50 / 414 * 100vw);
@@ -326,11 +330,14 @@ body {
     position: fixed;
     display: inline-block;
     font-size: 8px;
-    top: 400px;
+    top: 300px;
     color: #222222;
-    opacity: 0.5;
+    opacity: 0.8;
     z-index: 5;
     transition: color 0.3s ease; }
+    @media only screen and (min-width: 768px) {
+      .fstSeg__sideTxt {
+        top: 400px; } }
   .fstSeg .left {
     left: 3%;
     transform-origin: left center;
@@ -342,24 +349,47 @@ body {
 
 .fv {
   position: relative;
-  margin-bottom: 10rem; }
+  top: -6.5rem;
+  width: 100%;
+  min-height: 100vh;
+  /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100); }
   @media only screen and (min-width: 768px) {
     .fv {
-      margin-bottom: 25rem; } }
+      top: -10rem;
+      margin-bottom: -5rem; } }
+  @media only screen and (min-width: 992px) {
+    .fv {
+      top: -10rem;
+      margin-bottom: 5rem; } }
   .fv__img {
     width: calc(320 / 414 * 100vw);
-    margin: 0 auto; }
+    height: calc(605 / 414 * 100vw);
+    margin: 0 auto;
+    max-width: 32rem;
+    max-height: 60.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
     @media only screen and (min-width: 768px) {
       .fv__img {
-        width: 600px;
-        position: relative; } }
+        width: calc(600 / 1366 * 100vw);
+        height: calc(800 / 1366 * 100vw);
+        max-width: 45rem;
+        max-height: 59.8rem; } }
+    @media only screen and (min-width: 1200px) {
+      .fv__img {
+        max-width: 60rem;
+        max-height: 80rem; } }
     .fv__img--container {
       overflow: hidden;
       position: relative;
-      width: calc(320 / 414 * 100vw); }
-      @media only screen and (min-width: 768px) {
-        .fv__img--container {
-          width: 600px; } }
+      width: 100%;
+      height: 100%; }
+    .fv__img--filter {
+      -ms-filter: blur(9px);
+      filter: blur(9px); }
     .fv__img--innerName {
       width: 95vw;
       position: absolute;
@@ -373,24 +403,34 @@ body {
       letter-spacing: 12px;
       text-align: center;
       margin-bottom: 7px; }
+      @media only screen and (min-width: 400px) {
+        .fv__img--innerName {
+          font-size: 7rem; } }
       @media only screen and (min-width: 768px) {
         .fv__img--innerName {
-          font-size: calc(130 / 1366 * 100vw);
+          font-size: calc(100 / 1366 * 100vw);
           top: 56.5%; }
           .fv__img--innerName span {
             display: inline; } }
+      @media only screen and (min-width: 992px) {
+        .fv__img--innerName {
+          font-size: 9rem;
+          top: 46rem; } }
   .fv__ttl {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 75%;
+    top: 75.1%;
     width: 95vw;
     margin: 0 auto; }
     @media only screen and (min-width: 768px) {
       .fv__ttl {
-        width: 95%;
-        top: 58%; } }
+        width: 95vw;
+        top: 59.3%; } }
+    @media only screen and (min-width: 992px) {
+      .fv__ttl {
+        top: 47.2rem; } }
     .fv__ttl--name {
       font-size: calc(70 / 414 * 100vw);
       line-height: 1.16;
@@ -399,11 +439,17 @@ body {
       margin-bottom: 7px;
       color: #d1d1d1;
       z-index: 4; }
+      @media only screen and (min-width: 400px) {
+        .fv__ttl--name {
+          font-size: 7rem; } }
       @media only screen and (min-width: 768px) {
         .fv__ttl--name {
-          font-size: calc(130 / 1366 * 100vw); }
+          font-size: calc(100 / 1366 * 100vw); }
           .fv__ttl--name span {
             display: inline; } }
+      @media only screen and (min-width: 992px) {
+        .fv__ttl--name {
+          font-size: 9rem; } }
     .fv__ttl--desc {
       font-size: calc(12 / 414 * 100vw);
       text-align: center; }
@@ -419,9 +465,7 @@ body {
       padding: 0 calc(80 / 1366 * 100vw); } }
   @media only screen and (min-width: 768px) {
     .about {
-      max-width: 100rem;
-      margin: 0 auto;
-      padding: 0; } }
+      padding: 0 calc(80 / 1366 * 100vw); } }
   .about .maskBlock {
     margin-bottom: 7.5rem; }
   .about__ttl {
@@ -429,6 +473,9 @@ body {
     font-size: calc(35 / 414 * 100vw);
     letter-spacing: 2px;
     line-height: 1.34; }
+    @media only screen and (min-width: 768px) {
+      .about__ttl {
+        font-size: 4rem; } }
     @media only screen and (min-width: 768px) {
       .about__ttl {
         font-size: 6rem; } }
@@ -441,6 +488,9 @@ body {
     color: #d1d1d1;
     opacity: 0.5; }
     @media only screen and (min-width: 768px) {
+      .about__en {
+        top: 10rem; } }
+    @media only screen and (min-width: 992px) {
       .about__en {
         font-size: 12rem;
         top: 4.8rem; } }
@@ -501,7 +551,7 @@ body {
     text-align: center;
     text-decoration: underline;
     display: inline-block; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 992px) {
       .getInTouch__en {
         font-size: 12rem; } }
   .getInTouch__jp {
@@ -587,7 +637,6 @@ body {
   height: 60rem; }
 
 .insta_brick {
-  float: left;
   width: calc(100% / 7); }
   .insta_brick img {
     display: block;
@@ -672,6 +721,9 @@ body {
 
 .humbOn {
   transform: translateX(0); }
+
+.forHamb {
+  background-color: #222222 !important; }
 
 .slideIn {
   opacity: 1;

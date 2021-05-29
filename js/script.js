@@ -1,17 +1,44 @@
 'use strict';
-// document.querySelector('.about__ttl').classList.add('block--hidden');
+
 $(function () {
   $(document).ready(function () {
     $('.mosaic-in').mosaicIn({
       duration: 1500,
     });
+    setTimeout(function () {
+      $('.fv__img--filter').css({ filter: 'blur(0)' });
+    }, 500);
   });
 });
-// document.addEventListener('DOMContentLoaded', function () {
-//   document.querySelector('.mosaic-in').mosaicIn({
-//     duration: 1500,
-//   });
-// });
+
+// スマホ画面高さ計算
+document.addEventListener('DOMContentLoaded', function () {
+  const windowHeight = screen.height;
+  const menu = document.querySelector('.header__menu');
+  menu.style.height = windowHeight + 'px';
+});
+
+const setFillHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
+
+let vw = window.innerWidth;
+
+window.addEventListener('resize', () => {
+  if (vw === window.innerWidth) {
+    // 画面の横幅にサイズ変動がないので処理を終える
+    return;
+  }
+
+  // 画面の横幅のサイズ変動があった時のみ高さを再計算する
+  vw = window.innerWidth;
+  setFillHeight();
+});
+
+// 初期化
+setFillHeight();
+
 //////// HUMBERGER //////////
 const humbIcon = document.querySelector('.header__humb');
 const barUp = document.querySelector('.upper');
@@ -19,6 +46,8 @@ const barDown = document.querySelector('.down');
 const humbMenu = document.querySelector('.header__menu');
 const humbBars = document.querySelectorAll('.header__humb--icon');
 const navLists = document.querySelectorAll('.header__menuSp--list');
+const wrapper = document.querySelector('.wrapper');
+
 let navListsArr = [];
 navLists.forEach((el) => navListsArr.push(el));
 
@@ -109,15 +138,9 @@ const footerDisappear = function (entries) {
   if (!entry.isIntersecting) {
     headerPc.classList.remove('disappear');
     followArrow.classList.remove('wayback');
-    // setTimeout(function () {
-    //   followArrow.classList.remove('test');
-    // }, 300);
   } else {
     headerPc.classList.add('disappear');
     followArrow.classList.add('wayback');
-    // setTimeout(function () {
-    //   followArrow.classList.add('test');
-    // }, 300);
   }
 };
 const footerObserver = new IntersectionObserver(footerDisappear, {
@@ -152,34 +175,36 @@ sideTxtObserver.observe(fstSeg);
 
 //////// テキスト浮上 //////////
 const txtBlock = document.querySelectorAll('.showUp');
+const maskBlock = document.querySelectorAll('.maskBlock');
 console.log(txtBlock);
 txtBlock.forEach((el) => {
   el.classList.add('block--hidden');
 });
 const txtBlockShowUp = function (entries, observer) {
   const [entry] = entries;
-  entry.target.classList.remove('block--hidden');
-  observer.unobserve(entry.target);
+  console.log(entry.target.firstElementChild);
+  console.log(entry);
+  if (entry.isIntersecting) {
+    entry.target.firstElementChild.classList.remove('block--hidden');
+    observer.unobserve(entry.target);
+  }
 };
 const txtBlockObserver = new IntersectionObserver(txtBlockShowUp, {
   root: null,
   threshold: 0,
   rootMargin: '-10px',
 });
-txtBlock.forEach((block) => {
+maskBlock.forEach((block) => {
   txtBlockObserver.observe(block);
 });
 
 //////// マウスオーバー //////////
-// const secSeg = document.querySelector('.secSeg');
 const followTxt = document.querySelector('.follower__txt');
 const followArrow = document.querySelector('.mouse__scrollDown--arrow');
 const arrow = document.querySelector('.cursor');
 
 console.log(followTxt.getAttribute('src'));
 secSeg.addEventListener('mouseover', function () {
-  // console.log('Hi');
-  // const followTxt = document.querySelector('.follower__txt');
   followArrow.style.color = '#ffff9d';
   followTxt.setAttribute('src', 'img/top/scrollTxt_yellow.svg');
   header.addEventListener('mouseover', function () {
@@ -190,14 +215,8 @@ secSeg.addEventListener('mouseover', function () {
   });
 });
 secSeg.addEventListener('mouseout', function () {
-  // console.log('Hi');
-  // const followTxt = document.querySelector('.follower__txt');
   followArrow.style.color = '#222222';
   followTxt.setAttribute('src', 'img/top/scrollTxt_black.svg');
-  // header.addEventListener('mouseout', function () {
-  //   followArrow.style.color = '#222222';
-  //   followTxt.setAttribute('src', 'img/top/scrollTxt_black.svg');
-  // });
 });
 
 //////// Swiper.js //////////
@@ -285,7 +304,7 @@ $('a').on({
 $(function () {
   $.ajax({
     type: 'GET',
-    url: 'https://graph.facebook.com/v5.0/17841401896304896?fields=name%2Cmedia.limit(18)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cthumbnail_url%2Cmedia_type%2Cusername%7D&access_token=EAAIInQxewKcBAAmTIWSFBsAO3FuPnVnRNGa62Cz60uSaZAIEcfBYL4ygFdGG1AryodJDNiFycZAebd1W2YzY4GfthRgU0xEUBm736ZChzNKZC9N016br9Eu1ZBPC6e1PZBIGmzwHlr485rDtb1WVQDbOJR8fRFsvrlnZBfegqtpbcqhRB7Ezf4i',
+    url: 'https://graph.facebook.com/v5.0/17841401896304896?fields=name%2Cmedia.limit(15)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cthumbnail_url%2Cmedia_type%2Cusername%7D&access_token=EAAIInQxewKcBAAmTIWSFBsAO3FuPnVnRNGa62Cz60uSaZAIEcfBYL4ygFdGG1AryodJDNiFycZAebd1W2YzY4GfthRgU0xEUBm736ZChzNKZC9N016br9Eu1ZBPC6e1PZBIGmzwHlr485rDtb1WVQDbOJR8fRFsvrlnZBfegqtpbcqhRB7Ezf4i',
     dataType: 'json',
     success: function (json) {
       var html = '';
@@ -311,18 +330,17 @@ $(function () {
           html +=
             '<li class="insta_brick js-item"><img src="' +
             insta[i].thumbnail_url +
-            '"></li>';
+            '></li>';
           var media_type = '';
         }
       }
       $('.insta_list').append(html);
 
-      var $demo1 = $('.insta_list'); //コンテナとなる要素を指定
+      var $instaContainer = $('.insta_list'); //コンテナとなる要素を指定
 
-      $demo1.imagesLoaded(function () {
-        //imagesLoadedを使用し、画像が読み込みまれた段階でMasonryの関数を実行させる
+      $instaContainer.imagesLoaded(function () {
         //Masonryの関数↓
-        $demo1.masonry({
+        $instaContainer.masonry({
           //オプション指定箇所
           itemSelector: '.js-item', //コンテンツを指定
           // percentPosition: true,
