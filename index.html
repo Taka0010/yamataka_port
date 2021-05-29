@@ -24,7 +24,6 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
     <script defer src="js/lib/mosaicIn.js"></script>
-
     <script
       defer
       src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
@@ -72,12 +71,12 @@
   </head>
   <body>
     <!--▽ マウスカーソル ▽-->
-    <div class="mouse">
+    <div class="mouse onlyShowForMouse">
       <div class="cursor">
         <p><span class="mouse__scrollDown--arrow"></span></p>
       </div>
       <div class="follower">
-        <div class="mouse__scrollDown onlyShowForPc">
+        <div class="mouse__scrollDown">
           <div class="mouse__scrollDown--container">
             <span
               ><img
@@ -89,9 +88,10 @@
         </div>
       </div>
     </div>
-
     <!--△ マウスカーソル △-->
+
     <div class="wrapper">
+      <!--▽ Header ▽-->
       <header class="header">
         <div class="onlyShowForSp">
           <div class="header__humb">
@@ -146,11 +146,9 @@
           </div>
         </div>
       </header>
+      <!--△ Header △-->
+
       <section class="fstSeg">
-        <!--▽ Header ▽-->
-
-        <!--△ Header △-->
-
         <!--▽ Commontext ▽-->
         <p class="fstSeg__sideTxt left">&copy;NORIO OZAKI 2021</p>
         <p class="fstSeg__sideTxt right">&copy;NORIO OZAKI 2021</p>
@@ -160,7 +158,7 @@
         <section class="fv">
           <div class="fv__img">
             <div class="fv__img--container">
-              <picture>
+              <picture class="fv__img--filter">
                 <source
                   srcset="./img/top/portrait-sp.jpg"
                   media="(max-width: 768px)"
@@ -172,35 +170,42 @@
                 />
               </picture>
               <h1 class="fv__img--innerName optima">
-                NORIO<br class="onlyShowForSp" /><span class="onlyShowForPc"
+                TAKAYUKI<br class="onlyShowForSp" /><span class="onlyShowForPc"
                   >&nbsp;</span
-                >OZAKI
+                >YAMATO
               </h1>
             </div>
-
-            <!-- <div class="fv__scrollDown onlyShowForPc">
-              <div class="fv__scrollDown--container">
-                <img src="img/top/scrollTxt_black.svg" alt="DOWN SCROLL" />
-                <p><span class="fv__scrollDown--arrow"></span></p>
-              </div>
-            </div> -->
+            <div class="fv__ttl">
+              <h1 class="fv__ttl--name optima">
+                TAKAYUKI<br class="onlyShowForSp" /><span class="onlyShowForPc"
+                  >&nbsp;</span
+                >YAMATO
+              </h1>
+              <p class="fv__ttl--desc">I am a FREELANCE WEB DESIGNER</p>
+            </div>
           </div>
-          <div class="fv__ttl">
+          <!-- <div class="fv__ttl">
             <h1 class="fv__ttl--name optima">
               NORIO<br class="onlyShowForSp" /><span class="onlyShowForPc"
                 >&nbsp;</span
               >OZAKI
             </h1>
             <p class="fv__ttl--desc">I am a FREELANCE WEB DESIGNER</p>
-          </div>
+          </div> -->
         </section>
         <!--△ Main △-->
 
         <!--▽ About ▽-->
-        <section class="about showUp">
+        <section class="about">
+          <!-- <p class="about__ttl showUp">個性を引き出し<br />最大化させる</p> -->
           <div class="maskBlock">
             <h3 class="about__ttl showUp">個性を引き出し<br />最大化させる</h3>
           </div>
+          <!-- <div class="maskBlock">
+            <h3 class="about__ttl test showUp">
+              個性を引き出し<br />最大化させる
+            </h3>
+          </div> -->
           <h3 class="about__en optima">ABOUT<br />US</h3>
           <div class="about__txtContainer">
             <p class="about__txt about__txt--fst">
@@ -220,6 +225,9 @@
       <section class="secSeg">
         <!--▽ Slider ▽-->
         <section class="works">
+          <!-- <div class="maskBlock">
+            <h3 class="about__ttl showUp">個性を引き出し<br />最大化させる</h3>
+          </div> -->
           <div class="works__txt">
             <p class="works__ttl fsz-1">WORKS</p>
             <p class="works__link learnMore fsz-1">
@@ -263,42 +271,10 @@
         <section class="instagram">
           <p class="instagram__ttl fsz-1">INSTAGRAM</p>
           <div class="instagram__imgs">
-            <div class="insta_sizer"></div>
-            <!-- <div class="insta_list"> -->
             <ul class="insta_list">
-              <!-- <li class="insta_brick js-item">
-                <img src="img/top/portrait-sp.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-pc.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-sp.jpg" alt="" />
-              </li>
-              <li class="insta_brick insta_brick-wide js-item">
-                <img src="img/top/portrait-pc.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-pc.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-pc.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-sp.jpg" alt="" />
-              </li>
-              <li class="insta_brick insta_brick-wide js-item">
-                <img src="img/top/portrait-pc.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-sp.jpg" alt="" />
-              </li>
-              <li class="insta_brick js-item">
-                <img src="img/top/portrait-pc.jpg" alt="" />
-              </li> -->
+              <!-- インスタ生成エリア -->
             </ul>
           </div>
-          <!-- </div> -->
         </section>
         <!--△ Instagram △-->
 
@@ -336,7 +312,6 @@
 
     <!--▽JS▽-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-
     <!--△JS△-->
   </body>
 </html>

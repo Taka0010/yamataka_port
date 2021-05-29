@@ -11,7 +11,6 @@
 }
 .humbBarDownMove {
   animation: humbBarDownMove 0.8s ease-in forwards;
-  // animation-direction: alternate-reverse;
 }
 
 @keyframes humbBarUpMove {
@@ -52,6 +51,10 @@
   transform: translateX(0);
 }
 
+.forHamb {
+  background-color: $color-sub !important;
+}
+
 .slideIn {
   opacity: 1;
   transform: translateX(0);
@@ -67,7 +70,6 @@
 }
 
 .block--hidden {
-  // opacity: 1 !important;
   transform: translateY(15rem);
   transform-origin: bottom;
 }
@@ -78,20 +80,4 @@
 
 .mouse__scrollDown--arrow.wayback {
   transform: rotate(180deg);
-
-  // &::before {
-  //   opacity: 0;
-  //   bottom: 0.8rem;
-  //   transition: all 0.3s ease;
-  // }
 }
-// .mouse__scrollDown--arrow.test {
-//   // transform: rotate(180deg);
-//   // transition: all 0.3s ease-out;
-//   &::before {
-//     transform: rotate(-180deg);
-//     opacity: 1;
-//     bottom: 0.8rem;
-//     transition: all 0.3s ease;
-//   }
-// }

@@ -5,11 +5,14 @@
     position: fixed;
     display: inline-block;
     font-size: 8px;
-    top: 400px;
+    top: 300px;
     color: $color-sub;
-    opacity: 0.5;
+    opacity: 0.8;
     z-index: 5;
     transition: color 0.3s ease;
+    @include respond(tab-port) {
+      top: 400px;
+    }
   }
   .left {
     left: 3%;
@@ -25,26 +28,56 @@
 
 .fv {
   position: relative;
-  margin-bottom: 10rem;
+  // position: absolute;
+  top: -6.5rem;
+  width: 100%;
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+  // margin-bottom: 10rem;
+  @include respond(spBig) {
+    // top: -10rem;
+    // margin-bottom: 0rem;
+  }
   @include respond(tab-port) {
-    margin-bottom: 25rem;
+    top: -10rem;
+    margin-bottom: -5rem;
+  }
+  @include respond(laptop) {
+    top: -10rem;
+    margin-bottom: 5rem;
   }
   &__img {
-    // position: relative;
     width: calc(320 / 414 * 100vw);
+    height: calc(605 / 414 * 100vw);
     margin: 0 auto;
-    // overflow: hidden;
+    max-width: 32rem;
+    max-height: 60.5rem;
+    @include absCenter();
     @include respond(tab-port) {
-      width: 600px;
-      position: relative;
+      width: calc(600 / 1366 * 100vw);
+      height: calc(800 / 1366 * 100vw);
+      max-width: 45rem;
+      max-height: 59.8rem;
+      // position: relative;
+    }
+    @include respond(desktop) {
+      max-width: 60rem;
+      max-height: 80rem;
+      // height: 800px;
+      // position: relative;
     }
     &--container {
       overflow: hidden;
       position: relative;
-      width: calc(320 / 414 * 100vw);
-      @include respond(tab-port) {
-        width: 600px;
-      }
+      width: 100%;
+      height: 100%;
+      // @include respond(tab-port) {
+      //   width: calc(600 / 1366 * 100vw);
+      // }
+    }
+    &--filter {
+      -ms-filter: blur(9px);
+      filter: blur(9px);
     }
     &--innerName {
       width: 95vw;
@@ -56,28 +89,38 @@
       letter-spacing: 12px;
       text-align: center;
       margin-bottom: 7px;
+      @include respond(spBig) {
+        font-size: 7rem;
+      }
       @include respond(tab-port) {
-        font-size: calc(130 / 1366 * 100vw);
+        font-size: calc(100 / 1366 * 100vw);
+        // font-size: 10rem;
         top: 56.5%;
         // left: 53%;
         span {
           display: inline;
         }
       }
-      // @include respond(desktop) {
-      //   // left: 50%;
-      //   font-size: 14rem;
-      // }
+      @include respond(laptop) {
+        font-size: 9rem;
+        top: 46rem;
+      }
     }
   }
   &__ttl {
     @include absCenter;
-    top: 75%;
+    top: 75.1%;
     width: 95vw;
     margin: 0 auto;
+    @include respond(spBig) {
+      // top: 75.3%;
+    }
     @include respond(tab-port) {
-      width: 95%;
-      top: 58%;
+      width: 95vw;
+      top: 59.3%;
+    }
+    @include respond(laptop) {
+      top: 47.2rem;
     }
     &--name {
       font-size: calc(70 / 414 * 100vw);
@@ -87,15 +130,20 @@
       margin-bottom: 7px;
       color: $color-grey;
       z-index: 4;
+      @include respond(spBig) {
+        font-size: 7rem;
+      }
       @include respond(tab-port) {
-        font-size: calc(130 / 1366 * 100vw);
+        font-size: calc(100 / 1366 * 100vw);
+        // margin-bottom: 0;
+        // font-size: 11rem;
         span {
           display: inline;
         }
       }
-      // @include respond(desktop) {
-      //   font-size: 14rem;
-      // }
+      @include respond(laptop) {
+        font-size: 9rem;
+      }
     }
     &--desc {
       font-size: calc(12 / 414 * 100vw);
@@ -152,9 +200,9 @@
   position: relative;
   @include padSpacing;
   @include respond(tab-port) {
-    max-width: 100rem;
-    margin: 0 auto;
-    padding: 0;
+    // max-width: 100rem;
+    // margin: 0 auto;
+    padding: 0 calc(80 / 1366 * 100vw);
   }
   .maskBlock {
     margin-bottom: 7.5rem;
@@ -164,7 +212,9 @@
     font-size: calc(35 / 414 * 100vw);
     letter-spacing: 2px;
     line-height: 1.34;
-    // margin-bottom: 7.5rem;
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
     @include respond(tab-port) {
       font-size: 6rem;
     }
@@ -178,6 +228,10 @@
     color: $color-grey;
     opacity: 0.5;
     @include respond(tab-port) {
+      // font-size: 10rem;
+      top: 10rem;
+    }
+    @include respond(laptop) {
       font-size: 12rem;
       top: 4.8rem;
     }
@@ -247,7 +301,7 @@
     // margin-bottom: 2rem;
     text-decoration: underline;
     display: inline-block;
-    @include respond(tab-port) {
+    @include respond(laptop) {
       font-size: 12rem;
     }
   }
@@ -342,28 +396,9 @@
 .insta_list {
   width: 100%;
   height: 60rem;
-  // float: left;
-  // display: flex;
-  // flex-wrap: wrap;
-  // height: auto;
-  // &::after {
-  //   content: '';
-  //   display: block;
-  //   clear: both;
-  // }
 }
 .insta_brick {
-  float: left;
   width: calc(100% / 7);
-  // height: calc(100% / 7);
-  // float: left;
-  // width: 80px;
-  // height: 60px;
-  // &::after {
-  //   content: '';
-  //   display: block;
-  //   clear: both;
-  // }
   img {
     display: block;
     width: 100%;
@@ -371,9 +406,6 @@
 }
 .insta_brick-wide {
   width: calc(100% / 3.5);
-  // float: left;
-  // width: 80px;
-  // height: 60px;
   img {
     display: block;
     width: 100%;
